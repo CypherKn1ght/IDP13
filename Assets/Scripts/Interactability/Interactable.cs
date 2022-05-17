@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class Interactable : MonoBehaviour
+//https://www.youtube.com/watch?v=TWxXD-UpvSg
+public class Interactable : MonoBehaviour
 {
-    public abstract void Interact();
+    public bool isInRange;
+    public KeyCode interactKey;
+    public UnityEvent interactAction;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Start()
     {
-        if(collision.CompareTag("Player"))
+
+    }
+    void Update()
+    {
+        if(isInRange)
         {
-            
+            if(Input.GetKeyDown(interactKey))
+            {
+                interactAction.Invoke();
+            }
         }
     }
 }
