@@ -6,7 +6,7 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> Container = new List<InventorySlot>();
-    public void AddItem(ItemObject _item, int _amount)
+    public void  AddItem(ItemObject _item, int _amount)
     {
         bool hasItem = false;
         for (int i = 0; i < Container.Count; i++)
