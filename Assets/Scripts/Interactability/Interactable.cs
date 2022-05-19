@@ -24,5 +24,23 @@ public class Interactable : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isInRange = true;
+            Debug.Log("In Range");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isInRange = false;
+            Debug.Log("Out of Range");
+        }
+    }
+
 }
+
 

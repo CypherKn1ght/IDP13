@@ -5,13 +5,12 @@ using UnityEngine;
 public class Inventory_Handler : MonoBehaviour
 {
     public InventoryObject inventory;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AddItem(DefaultObject item)
     {
-        var item = collision.GetComponent<Item>();
-        if (item)
-        {
-            inventory.AddItem(item.item, 1);
-            Destroy(collision.gameObject);
-        }
+        inventory.AddItem(item, 1);
+        Destroy(item);
+
     }
 }
+
+
