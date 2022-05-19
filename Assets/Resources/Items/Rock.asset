@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d990c9fb27d42624dbbd026fcf07320d, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  Id: 0
+  uiDisplay: {fileID: 0}
   description: 
