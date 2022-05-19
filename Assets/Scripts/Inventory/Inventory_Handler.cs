@@ -7,8 +7,9 @@ public class Inventory_Handler : MonoBehaviour
     public InventoryObject inventory;
     public void AddItem(DefaultObject item)
     {
+        Debug.Log("Item Given");
         inventory.AddItem(item, 1);
-        Destroy(item);
+        //Destroy(item);
 
     }
 }
