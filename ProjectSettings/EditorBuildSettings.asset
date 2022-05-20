@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Entry House.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Hallway.unity
+    guid: d68e260aeb560444990f58e26efe0bfa
+  - enabled: 1
+    path: Assets/Scenes/Study.unity
+    guid: 011e7f6b0c247f142ad4091ecf0f0732
+  - enabled: 1
+    path: Assets/Scenes/Lab.unity
+    guid: 8350523fe183e064b8767e28f7f917c8
   m_configObjects: {}
