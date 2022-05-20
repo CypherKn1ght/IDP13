@@ -19,5 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position= pos;
     }
+    private void OnTriggerEnter2D(Collider2D collider){ 
+        Debug.Log("TRIGGER!!!");
+    }
 
 }
