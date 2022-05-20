@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Brick
   m_EditorClassIdentifier: 
   Id: 0
-  uiDisplay: {fileID: 0}
+  uiDisplay: {fileID: 21300000, guid: 499946b68a5a9324195783799e5240a6, type: 3}
   description: 
