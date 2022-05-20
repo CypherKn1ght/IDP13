@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class ItemObject : ScriptableObject
 {
@@ -10,7 +11,7 @@ public abstract class ItemObject : ScriptableObject
     public string description;
 }
 
-[System.Serializable]
+[Serializable]
 public class Item
 {
     public string Name;
