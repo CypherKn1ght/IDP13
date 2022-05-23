@@ -14,7 +14,7 @@ public class Phase_2 : MonoBehaviour
         print("Trigger Entered");
         if(other.tag == "Player"){
             if(tapedFingerprint == true){
-                print("Swithcing Scene to " + sceneBuildIndex);
+                print("Switching Scene to " + sceneBuildIndex);
                 SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
             }
         }
