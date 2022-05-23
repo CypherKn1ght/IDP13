@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class DisplayInventory : MonoBehaviour
 {
@@ -40,7 +40,7 @@ public class DisplayInventory : MonoBehaviour
             {
                 var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                obj.GetComponent<Image>().sprite = inventory.Container[i].item.uiDisplay;
+                obj.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.uiDisplay;
                 itemsDisplayed.Add(inventory.Container[i], obj);
             }
         }

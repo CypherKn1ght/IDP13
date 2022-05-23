@@ -9,14 +9,21 @@ public class Phase_2 : MonoBehaviour
     public bool tapedFingerprint = true;
     // Level moved zone enter, if collider is a player
     //Move game to another scene
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        print("Trigger Entered");
-        if(other.tag == "Player"){
-            if(tapedFingerprint == true){
-                print("Swithcing Scene to " + sceneBuildIndex);
-                SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+    public bool hasFinger;
+    [SerializeField]
+    public void setFinger(bool _help)
+    {
+        hasFinger = _help;
+    }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            print("Trigger Entered");
+            if (other.tag == "Player") {
+                if (hasFinger == true) {
+                    print("Swithcing Scene to " + sceneBuildIndex);
+                    SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+                }
             }
         }
-    }
+    
 }
