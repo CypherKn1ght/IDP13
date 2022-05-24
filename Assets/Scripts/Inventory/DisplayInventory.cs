@@ -13,50 +13,42 @@ public class DisplayInventory : MonoBehaviour
     public int X_SPACE_BETWEEN_ITEM;
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEM;
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject,InventorySlot>();
     // Start is called before the first frame update
     void Start()
     {
-        CreateDisplay();
+        CreateSlots();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        UpdateDisplay();
+        
     }
-    public void UpdateDisplay()
+    public void UpdateSlots()
     {
-        for(int i = 0; i< inventory.Container.Count; i++)
+        foreach (KeyValuePair<GameObject, InventorySlot> _slot in itemsDisplayed)
         {
-            if (itemsDisplayed.ContainsKey(inventory.Container[i]))
+            if (_slot.Value.item != null)
             {
-                if (inventory.Container[i].amount > 0)
-                {
-                    itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-                }
+               // _slot.Key.GetComponent<Image>().sprite = inventory.(_slot.Value.item.uiDisplay);
+               // _slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             }
             else
             {
-                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
-                obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                obj.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.uiDisplay;
-                itemsDisplayed.Add(inventory.Container[i], obj);
+               // _slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
             }
         }
     }
-        public void CreateDisplay()
+    public void CreateSlots()
     {
+        itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-            if (inventory.Container[i].amount > 0)
-            {
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-            }
-            obj.GetComponentInChildren<Image>().sprite = inventory.Container[i].item.uiDisplay;
-            itemsDisplayed.Add(inventory.Container[i], obj);
+            
+            itemsDisplayed.Add(obj, inventory.Container[i]);
         }
     }
     public Vector3 GetPosition(int i)

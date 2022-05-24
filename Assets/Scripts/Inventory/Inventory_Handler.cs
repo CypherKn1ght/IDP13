@@ -1,22 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 [SerializeField]
 public class Inventory_Handler : MonoBehaviour
 {
+    public TextMeshProUGUI fail;
     public InventoryObject inventory;
     [SerializeField]
-    public void AddItem(DefaultObject item)
+    public void AddItem(bool canRun, DefaultObject item)
     {
-        inventory.AddItem(item, 1);
-    }
-    public void RemoveItem(DefaultObject item)
-    {
-        inventory.RemoveItem(item, 1);
-    }
-    public void InteractItem()
-    {
+        if (canRun)
+        {
+            inventory.AddItem(item, 1);
+        }
         
+    }
+    public void RemoveItem(bool canRun, DefaultObject item)
+    {
+        if (canRun)
+        {
+            inventory.RemoveItem(item, 1);
+        }
+        
+    }
+    public bool ItemInteract(DefaultObject item)
+    {
+        if (inventory.CheckItem(item))
+        {
+            Debug.Log("You have the item");
+        }
+        else
+        {
+            Debug.Log("You don't have the item");
+        }
+        return inventory.CheckItem(item);
     }
     public void Update()
     {
@@ -63,3 +81,4 @@ public class Inventory_Handler : MonoBehaviour
     }
 
 }
+
