@@ -32,6 +32,7 @@ public class Bot_Collided : MonoBehaviour
     }
     private IEnumerator OnTriggerStay2D(Collider2D col){
         if (colliderActive == false){
+            
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
