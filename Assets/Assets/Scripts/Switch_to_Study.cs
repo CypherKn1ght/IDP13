@@ -15,7 +15,7 @@ public class Switch_to_Study : MonoBehaviour
         // Tags could work too. Maybe Some players  Have different script components?
         if(other.tag == "Player"){
             //Player entered so move level
-            print("Swithcing Scene to " + sceneBuildIndex);
+            print("Switching Scene to " + sceneBuildIndex);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
     }
