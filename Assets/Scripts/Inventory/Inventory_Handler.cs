@@ -5,9 +5,10 @@ using TMPro;
 [SerializeField]
 public class Inventory_Handler : MonoBehaviour
 {
+    public TextMeshProUGUI fail;
     public InventoryObject inventory;
     [SerializeField]
-    public void AddItem(bool canRun, Item item)
+    public void AddItem(bool canRun, DefaultObject item)
     {
         if (canRun)
         {
@@ -15,15 +16,15 @@ public class Inventory_Handler : MonoBehaviour
         }
         
     }
-    public void RemoveItem(bool canRun, Item item)
+    public void RemoveItem(bool canRun, DefaultObject item)
     {
         if (canRun)
         {
-            inventory.RemoveItem(item);
+            inventory.RemoveItem(item, 1);
         }
         
     }
-    public bool ItemInteract(Item item)
+    public bool ItemInteract(DefaultObject item)
     {
         if (inventory.CheckItem(item))
         {
