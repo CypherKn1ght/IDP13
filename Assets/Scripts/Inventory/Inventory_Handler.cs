@@ -19,7 +19,7 @@ public class Inventory_Handler : MonoBehaviour
     {
         if (canRun)
         {
-            inventory.RemoveItem(item, 1);
+            inventory.RemoveItem(item,1);
         }
         
     }
