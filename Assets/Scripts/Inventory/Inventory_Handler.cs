@@ -5,7 +5,6 @@ using TMPro;
 [SerializeField]
 public class Inventory_Handler : MonoBehaviour
 {
-    public TextMeshProUGUI fail;
     public InventoryObject inventory;
     [SerializeField]
     public void AddItem(bool canRun, DefaultObject item)

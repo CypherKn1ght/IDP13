@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 //https://www.youtube.com/watch?v=TWxXD-UpvSg
 public class Interactable : MonoBehaviour
@@ -9,7 +10,6 @@ public class Interactable : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UltEvents.UltEvent interactAction;
-
     void Start()
     {
 
@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
     {
         if(isInRange)
         {
-            if(Input.GetKeyDown(interactKey))
+            if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
             }
