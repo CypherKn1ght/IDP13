@@ -31,12 +31,12 @@ public class DisplayInventory : MonoBehaviour
         {
             if (_slot.Value.item != null)
             {
-               // _slot.Key.GetComponent<Image>().sprite = inventory.(_slot.Value.item.uiDisplay);
-               // _slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                // _slot.Key.GetComponent<Image>().sprite = DisplayInventory.inventory(_slot.Value.item.uiDisplay);
+                // _slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             }
             else
             {
-               // _slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                // _slot.Key.GetComponent<Image>().color = new Color(1, 1, 1, 0);
             }
         }
     }
