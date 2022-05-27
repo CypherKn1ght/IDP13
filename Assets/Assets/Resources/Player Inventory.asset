@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b40d2c151735554c89ccb133028bba2, type: 3}
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
-  selectedSlot: 1
+  selectedSlot: 0
   savePath: /inventory.Save
   database: {fileID: 11400000, guid: 742f9be7df81aaa4799d7386075d5186, type: 2}
   Container:
     Items:
-    - ID: 1
-      item: {fileID: 11400000, guid: 5be65bd7b4c79de4abdf5c78899a182a, type: 2}
-      amount: 10
+    - ID: -1
+      item: {fileID: 0}
+      amount: 0
     - ID: -1
       item: {fileID: 0}
       amount: 0

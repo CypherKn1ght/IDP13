@@ -18,6 +18,7 @@ public class DisplayInventory : MonoBehaviour
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
     Dictionary<GameObject, InventorySlot> itemsDisplayed = new Dictionary<GameObject, InventorySlot>();
+    Dictionary<InventorySlot, GameObject> slotsDislpayed = new Dictionary<InventorySlot, GameObject>();
     void Start()
     {
         CreateSlots();
@@ -36,17 +37,18 @@ public class DisplayInventory : MonoBehaviour
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
 
-            AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
-            AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
-            AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
-            AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
-            AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
+            // AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
+            // AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
+            // AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
+            // AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
+            // AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
 
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
         }
     }
     public void UpdateSlots()
     {
+        
         foreach (KeyValuePair<GameObject, InventorySlot> _slot in itemsDisplayed)
         {
             if (_slot.Value.ID >= 0)
@@ -62,6 +64,7 @@ public class DisplayInventory : MonoBehaviour
                 _slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
         }
+        
     }
     private void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
     {
