@@ -42,7 +42,6 @@ public class DisplayInventory : MonoBehaviour
             AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
 
-
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
         }
     }
