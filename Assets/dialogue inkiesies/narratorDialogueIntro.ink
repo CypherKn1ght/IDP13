@@ -1,0 +1,1 @@
+Welcome, we have a new task for you. Details are in the file. Break in, and get out before dawn. We may or may not be able to help you. You have two and a half hours once you begin. Good luck.

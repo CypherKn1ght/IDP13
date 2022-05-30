@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d990c9fb27d42624dbbd026fcf07320d, type: 3}
   m_Name: Chemical 2
   m_EditorClassIdentifier: 
+  Id: 3
   uiDisplay: {fileID: 0}
   description: 

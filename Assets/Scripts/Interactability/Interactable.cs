@@ -7,6 +7,7 @@ using UnityEngine.UI;
 //https://www.youtube.com/watch?v=TWxXD-UpvSg
 public class Interactable : MonoBehaviour
 {
+    public Image image;
     public bool isInRange;
     public KeyCode interactKey;
     public UltEvents.UltEvent interactAction;
@@ -29,6 +30,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = true;
+            image.enabled = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -36,6 +38,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = false;
+            image.enabled = false;
         }
     }
 }

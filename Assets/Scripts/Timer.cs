@@ -8,10 +8,13 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 1800;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
-    private void Start()
+    public void startTimer()
     {
-        // Starts the timer automatically
         timerIsRunning = true;
+    }
+    public void stopTimer()
+    {
+        timerIsRunning = false;
     }
     void Update()
     {
