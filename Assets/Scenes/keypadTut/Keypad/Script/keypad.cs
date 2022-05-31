@@ -16,7 +16,7 @@ public class keypad : MonoBehaviour
     // audioData : Play this sound when user enters in password incorrectly too many times
 
     [Header("Keypad Settings")]
-    public string curPassword = "CHN";
+    public string curPassword = "";
     public string input;
     public Text displayText;
     public AudioSource audioData;
@@ -32,6 +32,8 @@ public class keypad : MonoBehaviour
     {
         btnClicked = 0; // No of times the button was clicked
         numOfGuesses = curPassword.Length; // Set the password length.
+        Debug.Log("Password length is " + curPassword.Length);
+        Debug.Log("Number of guesses is " + numOfGuesses);
     }
 
     // Update is called once per frame
@@ -85,6 +87,7 @@ public class keypad : MonoBehaviour
                 btnClicked++; // Add a guess
                 input += valueEntered;
                 displayText.text = input.ToString();
+                Debug.Log(input);
                 break;
         }
 

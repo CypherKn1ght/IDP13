@@ -73,7 +73,9 @@ public class DisplayInventory : MonoBehaviour
         Debug.Log("Enter");
         mouseItem.hoverObj = obj;
         if (itemsDisplayed.ContainsKey(obj))
+        {
             mouseItem.hoverItem = itemsDisplayed[obj];
+        }
     }
     public void OnExit(GameObject obj)
     {

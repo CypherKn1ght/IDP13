@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 //https://www.youtube.com/watch?v=TWxXD-UpvSg
 public class Interactable : MonoBehaviour
 {
-    public Image image;
+    public GameObject image;
     public bool isInRange;
     public KeyCode interactKey;
+    public UltEvents.UltEvent enterAction;
+    public UltEvents.UltEvent exitAction;
     public UltEvents.UltEvent interactAction;
     void Start()
     {
@@ -30,7 +33,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = true;
-            image.enabled = true;
+            enterAction.Invoke();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -38,8 +41,22 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = false;
-            image.enabled = false;
+            exitAction.Invoke();
         }
     }
+    public void showInteract(bool canRun,string textToDisplay)
+    {
+        if (canRun)
+        {
+            image.SetActive(true);
+            image.GetComponentInChildren<TextMeshProUGUI>().text = textToDisplay;
+        }
+        else
+        {
+            image.SetActive(false);
+        }
+    }
+    
+    
 }
 
