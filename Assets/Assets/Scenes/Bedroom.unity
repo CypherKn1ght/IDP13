@@ -46869,7 +46869,6 @@ GameObject:
   - component: {fileID: 1997095523}
   - component: {fileID: 1997095522}
   - component: {fileID: 1997095521}
-  - component: {fileID: 1997095520}
   - component: {fileID: 1997095525}
   m_Layer: 0
   m_Name: lockedcaseinlab
@@ -46878,25 +46877,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1997095520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997095519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68b58b3b2843f4b46934fc49d7c40e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
-  interactKey: 101
-  interactAction:
-    _PersistentCalls:
-    - _Target: {fileID: 1997095525}
-      _MethodName: 
-      _PersistentArguments: []
 --- !u!61 &1997095521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47025,9 +47005,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1997095519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dfb3f7f147aa941b23aa3f38787f4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 41d3392f33ae81d4d8c02aad7f1e24b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneBuildIndex: 0
 --- !u!1 &2088155559
 GameObject:
   m_ObjectHideFlags: 0
