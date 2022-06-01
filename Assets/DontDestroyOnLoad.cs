@@ -10,15 +10,10 @@ using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
-    public string tag;
+    
     void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("tag");
-
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("leaderboard");
 
         DontDestroyOnLoad(this.gameObject);
     }
