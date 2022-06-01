@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/Leaderboard Scene.unity
     guid: 6321f94489d730f45add240d34d7d163
+  - enabled: 1
+    path: Assets/Assets/Scenes/Hallway.unity
+    guid: fc9f495e10636ad4bb784264e1c4c9e0
+  - enabled: 1
+    path: Assets/Assets/Scenes/Study.unity
+    guid: 3d50fcc9edb96a1449d2e727f55ce455
+  - enabled: 1
+    path: Assets/Assets/Scenes/Lab.unity
+    guid: bee6b6c433f78a24c8a2d08f28ee0012
+  - enabled: 1
+    path: Assets/Assets/Scenes/Bedroom.unity
+    guid: 5768ae9d06713e24d947b3f9e1e2d001
+  - enabled: 1
+    path: Assets/Assets/Scenes/Ending Scenes.unity
+    guid: 7a0c1dde1c889e946baae922ad3f6bd7
   m_configObjects: {}
