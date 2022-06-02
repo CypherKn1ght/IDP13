@@ -22,7 +22,8 @@ public class keypad : MonoBehaviour
     public TextMeshProUGUI displayText;
     public AudioSource audioData;
     public UltEvents.UltEvent solved;
-    
+    public UltEvents.UltEvent failed;
+
     //Local private variables
     private bool keypadScreen;
     private float btnClicked = 0;
@@ -43,7 +44,7 @@ public class keypad : MonoBehaviour
             if (input == curPassword)
             {
                 //Load the next scene
-                SceneManager.LoadScene(4);
+                solved.Invoke();
 
                 // LOG message that password is correct
                 Debug.Log("Correct Password!");
@@ -54,6 +55,7 @@ public class keypad : MonoBehaviour
             else
             {
                 //Reset input varible
+                failed.Invoke();
                 input = "";
                 displayText.text = input.ToString();
                 audioData.Play();

@@ -1,1 +1,0 @@
-That glass case must be where the blueprints are.
