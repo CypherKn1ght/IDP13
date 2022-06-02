@@ -17,9 +17,9 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 742f9be7df81aaa4799d7386075d5186, type: 2}
   Container:
     Items:
-    - ID: -1
-      item: {fileID: 0}
-      amount: 0
+    - ID: 0
+      item: {fileID: 11400000, guid: 7ad7824ba6c59be49b089dfb2db37f62, type: 2}
+      amount: 1
     - ID: -1
       item: {fileID: 0}
       amount: 0

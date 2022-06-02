@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Player Database
   m_EditorClassIdentifier: 
   Items:
-  - {fileID: 11400000, guid: b8413ef94e1838249bec9ccc701446fe, type: 2}
-  - {fileID: 11400000, guid: 5be65bd7b4c79de4abdf5c78899a182a, type: 2}
-  - {fileID: 11400000, guid: 7f53b34c0ab32eb47ae37964f553d65a, type: 2}
-  - {fileID: 11400000, guid: 6531ae6bd3468d54f97991908865a91d, type: 2}
-  - {fileID: 11400000, guid: df3202491374f10418314f549395f118, type: 2}
   - {fileID: 11400000, guid: 24796f0a29f726e419e5a1d9a06fdf51, type: 2}
+  - {fileID: 11400000, guid: 5be65bd7b4c79de4abdf5c78899a182a, type: 2}
+  - {fileID: 11400000, guid: 6531ae6bd3468d54f97991908865a91d, type: 2}
+  - {fileID: 11400000, guid: b8413ef94e1838249bec9ccc701446fe, type: 2}
+  - {fileID: 11400000, guid: 7f53b34c0ab32eb47ae37964f553d65a, type: 2}
+  - {fileID: 11400000, guid: df3202491374f10418314f549395f118, type: 2}
+  - {fileID: 11400000, guid: 7ad7824ba6c59be49b089dfb2db37f62, type: 2}
