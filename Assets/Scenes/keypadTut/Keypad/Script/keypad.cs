@@ -17,7 +17,7 @@ public class keypad : MonoBehaviour
     // audioData : Play this sound when user enters in password incorrectly too many times
 
     [Header("Keypad Settings")]
-    public string curPassword = "";
+    public string curPassword;
     public string input;
     public TextMeshProUGUI displayText;
     public AudioSource audioData;
@@ -43,7 +43,7 @@ public class keypad : MonoBehaviour
             if (input == curPassword)
             {
                 //Load the next scene
-                solved.Invoke();
+                SceneManager.LoadScene(4);
 
                 // LOG message that password is correct
                 Debug.Log("Correct Password!");

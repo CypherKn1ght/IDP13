@@ -7,7 +7,7 @@ public class LeaderboardController : MonoBehaviour
 {
     public TMP_InputField Name, PlayerScore;
     public int ID;
-    int MaxScores = 4;
+    int MaxScores = 10;
     public TextMeshProUGUI[] Entries;
 
     private void Start()
