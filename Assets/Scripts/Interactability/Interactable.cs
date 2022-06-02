@@ -56,7 +56,19 @@ public class Interactable : MonoBehaviour
             image.SetActive(false);
         }
     }
+    public bool not(bool a)
+    {
+        return !a;
+    }
+    public bool and(bool a, bool b)
+    {
+        return a && b;
+    }
+    public bool or(bool a, bool b)
+    {
+        return a || b;
+    }
     
-    
+
 }
 

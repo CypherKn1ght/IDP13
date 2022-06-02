@@ -13,15 +13,15 @@ public class Inventory_Handler : MonoBehaviour
         {
             inventory.AddItem(item, 1);
         }
-        
+
     }
     public void RemoveItem(bool canRun, DefaultObject item)
     {
         if (canRun)
         {
-            inventory.RemoveItem(item,1);
+            inventory.RemoveItem(item, 1);
         }
-        
+
     }
     public bool ItemInteract(DefaultObject item)
     {
@@ -77,6 +77,11 @@ public class Inventory_Handler : MonoBehaviour
         {
             inventory.selectedSlot = 9;
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Items = new InventorySlot[10];
     }
 
 }

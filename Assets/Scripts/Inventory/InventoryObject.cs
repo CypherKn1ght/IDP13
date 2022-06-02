@@ -42,14 +42,6 @@ public class InventoryObject : ScriptableObject
         return null;
     }
 
-    public void MoveItem(InventorySlot item1, InventorySlot item2)
-    {
-        InventorySlot temp = new InventorySlot(item2.ID, item2.item, item2.amount);
-        item2.UpdateSlot(item1.ID, item1.item, item1.amount);
-        item1.UpdateSlot(temp.ID, temp.item, temp.amount);
-    }
-
-
     public void RemoveItem(ItemObject _item, int _amount)
     {
         for (int i = 0; i < Container.Items.Length; i++)
@@ -81,38 +73,40 @@ public class InventoryObject : ScriptableObject
     {
         if (Container.Items[selectedSlot].item == _item)
         {
+            Debug.Log("Item Exists");
             return true;
         }
         else
         {
+            Debug.Log("Item Does Not Exist");
             return false;
         }
     }
 
-    [ContextMenu("Save")]
-    public void Save()
-    {
-        IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
-        formatter.Serialize(stream, Container.Items);
-        stream.Close();
-    }
-    [ContextMenu("Load")]
-    public void Load()
-    {
-        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
-        {
+    //[ContextMenu("Save")]
+    //public void Save()
+    //{
+    //    IFormatter formatter = new BinaryFormatter();
+    //    Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
+    //    formatter.Serialize(stream, Container.Items);
+    //    stream.Close();
+    //}
+    //[ContextMenu("Load")]
+    //public void Load()
+    //{
+    //    if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+    //    {
 
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Inventory newContainer = (Inventory)formatter.Deserialize(stream);
-            for (int i = 0; i < Container.Items.Length; i++)
-            {
-                Container.Items[i].UpdateSlot(newContainer.Items[i].ID, newContainer.Items[i].item, newContainer.Items[i].amount);
-            }
-            stream.Close();
-        }
-    }
+    //        IFormatter formatter = new BinaryFormatter();
+    //        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
+    //        Inventory newContainer = (Inventory)formatter.Deserialize(stream);
+    //        for (int i = 0; i < Container.Items.Length; i++)
+    //        {
+    //            Container.Items[i].UpdateSlot(newContainer.Items[i].ID, newContainer.Items[i].item, newContainer.Items[i].amount);
+    //        }
+    //        stream.Close();
+    //    }
+    //}
     [ContextMenu("Clear")]
     public void Clear()
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class keypad : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class keypad : MonoBehaviour
     [Header("Keypad Settings")]
     public string curPassword = "";
     public string input;
-    public Text displayText;
+    public TextMeshProUGUI displayText;
     public AudioSource audioData;
     public UltEvents.UltEvent solved;
     
@@ -32,8 +33,6 @@ public class keypad : MonoBehaviour
     {
         btnClicked = 0; // No of times the button was clicked
         numOfGuesses = curPassword.Length; // Set the password length.
-        Debug.Log("Password length is " + curPassword.Length);
-        Debug.Log("Number of guesses is " + numOfGuesses);
     }
 
     // Update is called once per frame

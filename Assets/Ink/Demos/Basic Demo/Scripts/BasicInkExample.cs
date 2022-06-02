@@ -10,7 +10,6 @@ public class BasicInkExample : MonoBehaviour {
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
-		StartStory();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
@@ -49,12 +48,10 @@ public class BasicInkExample : MonoBehaviour {
 			}
 		}
 		// If we've read all the content and there's no choices, the story is finished!
-		else {
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate{
-				StartStory();
-			});
-		}
+		else
+		{
+            RemoveChildren();
+        }
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
@@ -94,6 +91,11 @@ public class BasicInkExample : MonoBehaviour {
 			GameObject.Destroy (canvas.transform.GetChild (i).gameObject);
 		}
 	}
+
+	void changeText(TextAsset newInkJSONAsset)
+    {
+		inkJSONAsset = newInkJSONAsset;
+    }
 
 	[SerializeField]
 	private TextAsset inkJSONAsset = null;
